@@ -69,6 +69,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	contents, _ := ioutil.ReadAll(response.Body)
 	var user *GoogleUser
 	_ = json.Unmarshal(contents, &user)
-	fmt.Println(*user)
-	fmt.Fprintf(w, "ID: %s\nEmail: %s\nName: %s\nGender: %s\nImage link: %s", user.ID, user.Email, user.Name, user.Gender, user.Picture)
+	fmt.Println(user)
+	fmt.Fprintf(w, "ID: %s\nEmail: %s\nName: %s\nImage link: %s", user.ID, user.Email, user.Name, user.Picture)
 }
